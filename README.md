@@ -9,7 +9,6 @@ A Tool set for statistic.
   
 ### Depends  
 - R (>= 4.1.2),
-- DevToolKit,
 - DatHandToolKit
   
 ## 1. Instalation  
