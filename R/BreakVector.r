@@ -14,7 +14,7 @@
 #' BreakVector(x.num=x.num, n.num=9)
 
 BreakVector <- function(x.num=NULL, min.num=NULL, center.num=NULL, max.num=NULL, n.num=10, method.chr="linear") {
-    n.num %<>% add(1)
+    n.num %<>% magrittr::add(1)
     if(method.chr=="linear"){
         x.num <- x.num[which(!is.na(x.num))]
         if(is.null(min.num)){min.num <- min(x.num, na.rm=TRUE)}

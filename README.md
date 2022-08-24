@@ -8,8 +8,12 @@ A Tool set for statistic.
 - 0.1.0  
   
 ### Depends  
-- R (>= 4.1.2),
+- R (>= 4.1.2)
+  
+### Imports 
 - DatHandToolKit
+- DevToolKit
+- magrittr  
   
 ## 1. Instalation  
 ```

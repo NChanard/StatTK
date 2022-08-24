@@ -26,5 +26,5 @@ Normalize <- function(x.num=NULL, a.num=NULL){
         "CbrtNorm"=MedianSkewness(CbrtNorm(x.num,a.num)),
         "Log2Norm"=MedianSkewness(Log2Norm(x.num,a.num))
     ) %>% abs %>% which.min %>% names 
-    normMethod.chr %>% {eval(parse(text=.))(x.num,a.num)} %>% add_attributes(., attribute.lst=list(norm=normMethod.chr), overwrite.bln=TRUE) %>% return
+    normMethod.chr %>% {eval(parse(text=.))(x.num,a.num)} %>% DevToolKit::add_attributes(., attribute.lst=list(norm=normMethod.chr), overwrite.bln=TRUE) %>% return
 }

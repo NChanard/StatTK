@@ -6,8 +6,11 @@ Author: Nicolas Chanard <nicolas.chanard@univ-tlse3.fr>
 Maintainer: Nicolas Chanard <nicolas.chanard@univ-tlse3.fr>
 Description: A tool set for statistic.
 Depends:
-    R (>= 4.1.2),
-    DatHandToolKit
+    R (>= 4.1.2)
+Imports:
+    DatHandToolKit,
+    DevToolKit,
+    magrittr
 Remotes: NChanard/DatHandToolKit
 License: None
 Encoding: UTF-8
