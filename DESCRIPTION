@@ -1,18 +1,21 @@
-Package: StatToolKit
+Package: StatTK
 Type: Package
-Title: StatToolKit
+Title: Set of statistical tools
 Version: 0.1.0
 Author: Nicolas Chanard <nicolas.chanard@univ-tlse3.fr>
 Maintainer: Nicolas Chanard <nicolas.chanard@univ-tlse3.fr>
-Description: A tool set for statistic.
+Description: Set of statistical tools.
 Depends:
-    R (>= 4.1.2)
+    R (>= 4.1)
 Imports:
-    DatHandToolKit,
-    DevToolKit,
-    magrittr
-Remotes: NChanard/DatHandToolKit
-License: None
+    DataTK,
+    DevTK,
+    dplyr,
+    magrittr,
+    stats,
+    utils
+Remotes: NChanard/DataTK
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.2.0

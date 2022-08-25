@@ -10,5 +10,5 @@
 #' MedianSkewness(rnorm(10000, 1, 0.01))
 MedianSkewness <- function(x.num){
     x.num %<>% .[which(is.finite(.))]
-    return(3*(mean(x.num)-median(x.num))/sd(x.num))
+    return(3*(mean(x.num)-stats::median(x.num))/stats::sd(x.num))
 }

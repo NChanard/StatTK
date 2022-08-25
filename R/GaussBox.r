@@ -15,7 +15,7 @@ GaussBox <- function(sd.num=1, boxSize.num=NULL, scale.chr="1") {
     x.num <-as.vector(scale(seq_len(boxSize.num),scale=FALSE,center=TRUE))
     box <- lapply(x.num,function(x){
         xInterval.num<-seq((x-0.5),(x+0.5),by=0.01)
-        lapply(xInterval.num, function(xi){Gauss(x=xi,sd.num=sd.num)}) %>% unlist %>% mean %>% return
+        lapply(xInterval.num, function(xi){Gauss(x=xi,sd.num=sd.num)}) %>% unlist %>% mean %>% return(.)
     }) %>% unlist
     if(scale.chr == "1" ){
         box  %<>% {./sum(abs(.))}

@@ -15,8 +15,8 @@
 #' IqrThreshold(x.num, bounds.chr="upper")
 
 IqrThreshold <- function(x.num=NULL, iqrFactor.num=1.5, bounds.chr="both"){
-    Q1.num <- quantile(x.num,0.25)
-    Q3.num <- quantile(x.num,0.75)
+    Q1.num <- stats::quantile(x.num,0.25)
+    Q3.num <- stats::quantile(x.num,0.75)
     interQ.num <- Q3.num-Q1.num
     upper.num <- Q3.num+(iqrFactor.num*interQ.num)
     lower.num <- Q1.num-(iqrFactor.num*interQ.num)
@@ -24,5 +24,5 @@ IqrThreshold <- function(x.num=NULL, iqrFactor.num=1.5, bounds.chr="both"){
         bounds.chr =="both" ~ c(lower.num,upper.num),
         bounds.chr =="upper" ~ c(NA,upper.num),
         bounds.chr =="lower" ~ c(lower.num,NA)
-    ) %>% return
+    ) %>% return(.)
 }

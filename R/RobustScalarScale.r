@@ -14,4 +14,4 @@
 #'     plot(density(MeanScale(x.num)),col="red",xlim=c(min(MeanScale(y.num)),max(MeanScale(x.num) )))
 #'     lines(density(MeanScale(y.num)),col="green")
 #' dev.off()
-RobustScalarScale <- function(x.num){(x.num-median(x.num,na.rm=TRUE))/quantile(x.num,0.75,na.rm=TRUE)-quantile(x.num,0.25,na.rm=TRUE)}
+RobustScalarScale <- function(x.num){(x.num-stats::median(x.num,na.rm=TRUE))/stats::quantile(x.num,0.75,na.rm=TRUE)-stats::quantile(x.num,0.25,na.rm=TRUE)}

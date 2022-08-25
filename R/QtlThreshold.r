@@ -19,5 +19,5 @@ QtlThreshold <- function(x.num=NULL, prct.num=5, bounds.chr="both"){
         bounds.chr =="both" ~ c(prct.num/200,1-(prct.num/200)),
         bounds.chr =="upper" ~ c(NA,1-(prct.num/100)),
         bounds.chr =="lower" ~ c(prct.num/100,NA)
-    ) %>% quantile(x.num,na.rm=TRUE,.) %>% return
+    ) %>% stats::quantile(x.num,na.rm=TRUE,.) %>% return(.)
 }

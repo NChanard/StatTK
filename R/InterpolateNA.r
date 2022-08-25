@@ -17,8 +17,8 @@
 #' dev.off()
 InterpolateNA <- function(x.num, method.chr="spline",...){
     if(method.chr == "spline"){
-        smoo <- smooth.spline(seq_along(x.num)[!is.na(x.num)],x.num[!is.na(x.num)],...)
-        x.num[is.na(x.num)] <- predict(smoo,seq_along(x.num)[is.na(x.num)])$y
+        smoo <- stats::smooth.spline(seq_along(x.num)[!is.na(x.num)],x.num[!is.na(x.num)],...)
+        x.num[is.na(x.num)] <- stats::predict(smoo,seq_along(x.num)[is.na(x.num)])$y
         return(x.num)
     }else if(method.chr == "linear"){
         firstsNa.ndx <- NULL
@@ -27,11 +27,11 @@ InterpolateNA <- function(x.num, method.chr="spline",...){
             x.num <- x.num[(firstsNa.ndx+1):length(x.num)]
         }
         lastNa.ndx <- NULL
-        if(is.na(tail(x.num,1))){
+        if(is.na(utils::tail(x.num,1))){
             lastNa.ndx <- which(diff(cumsum(is.na(rev(x.num))))==0)[1]
             x.num <- x.num[1:(length(x.num)-lastNa.ndx)]
         }
-        x.num <- approx(x=x.num, n=length(x.num))$y
+        x.num <- stats::approx(x=x.num, n=length(x.num))$y
         if (!is.null(firstsNa.ndx))    {
             by.num <- mean(diff(x.num))
             firstsNa.ndx <- seq(x.num[1]-(by.num*firstsNa.ndx), x.num[1]-(by.num*(firstsNa.ndx-1)), by=by.num)

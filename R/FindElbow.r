@@ -21,11 +21,11 @@ FindElbow <- function(x.num, y.num) {
         xyMax.num <- x.num[which.max(y.num)]
         max.dtf <- data.frame(x = c(xyMax.num, xMax.num), y = c(yMax.num, yxMax.num))
     # Creating straight line between the max values
-        fit.lm <- lm(max.dtf$y ~ max.dtf$x)
+        fit.lm <- stats::lm(max.dtf$y ~ max.dtf$x)
     # Distance from point to line
         distances.num <- c()
         for(i in seq_along(x.num)) {
-            distances.num <- c(distances.num, abs(coef(fit.lm)[2]*x.num[i] - y.num[i] + coef(fit.lm)[1]) / sqrt(coef(fit.lm)[2]^2 + 1^2))
+            distances.num <- c(distances.num, abs(stats::coef(fit.lm)[2]*x.num[i] - y.num[i] + stats::coef(fit.lm)[1]) / sqrt(stats::coef(fit.lm)[2]^2 + 1^2))
         }
     # Max distance point
         xMaxDist <- x.num[which.max(distances.num)]

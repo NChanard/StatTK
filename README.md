@@ -1,4 +1,4 @@
-# StatToolKit
+# StatTK
 A Tool set for statistic.  
   
 ### Author  
@@ -8,20 +8,22 @@ A Tool set for statistic.
 - 0.1.0  
   
 ### Depends  
-- R (>= 4.1.2)
+- R (>= 4.1)
   
 ### Imports 
-- DatHandToolKit
-- DevToolKit
+- DataTK
+- DevTK
 - magrittr  
+- stats  
+- utils  
   
 ## 1. Instalation  
 ```
-devtools::install_github("Nchanard/StatToolKit")
+devtools::install_github("Nchanard/StatTK")
 ```
   
 ## 2. Documentation  
-https://nchanard.github.io/StatToolKit/
+https://nchanard.github.io/StatTK/
   
 ## 3. Standard  
 ### A. Variables  

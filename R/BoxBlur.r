@@ -14,14 +14,14 @@
 #' heatmap(BoxBlur(mat.mtx),Rowv=NA,Colv=NA)
 #' dev.off()
 BoxBlur <- function(mat.mtx, box.num=NULL, boxSize.num=NULL, sd.num=1){
-    if(is.null(box.num)){box.num <- GaussBox(sd=sd.num,scale.chr="1",boxSize.num=boxSize.num)}
+    if(is.null(box.num)){box.num <- GaussBox(sd.num=sd.num,scale.chr="1",boxSize.num=boxSize.num)}
     pad.num <- (length(box.num)-1)/2
-    mat.mtx <- DatHandToolKit::PadMtx(mat.mtx=mat.mtx, padSize.num=pad.num, value.num=NA, side.chr=c('top','bot','right','left'))
-    matVsmth.mtx2 <- sapply(((1+pad.num):(dim(mat.mtx)[2]-pad.num)), function(j){(t(mat.mtx[,(j-pad.num):(j+pad.num)]) * box.num) %>% apply(.,2,DevToolKit::Plus)})
-    matHsmth.mtx2 <- t(sapply(((1+pad.num):(dim(matVsmth.mtx2)[1]-pad.num)), function(i){(matVsmth.mtx2[(i-pad.num):(i+pad.num),] * box.num) %>% apply(.,2,DevToolKit::Plus)%>% t}))
+    mat.mtx <- DataTK::PadMtx(mat.mtx=mat.mtx, padSize.num=pad.num, value.num=NA, side.chr=c('top','bot','right','left'))
+    matVsmth.mtx2 <- sapply(((1+pad.num):(dim(mat.mtx)[2]-pad.num)), function(j){(t(mat.mtx[,(j-pad.num):(j+pad.num)]) * box.num) %>% apply(.,2,DevTK::Plus)})
+    matHsmth.mtx2 <- t(sapply(((1+pad.num):(dim(matVsmth.mtx2)[1]-pad.num)), function(i){(matVsmth.mtx2[(i-pad.num):(i+pad.num),] * box.num) %>% apply(.,2,DevTK::Plus)%>% t}))
     which.ndx <- which(matHsmth.mtx2==0)
     if(length(which.ndx )){
-        matHsmth.mtx2 = DatHandToolKit::Rise0(matHsmth.mtx2,which.ndx=which.ndx)
+        matHsmth.mtx2 = DataTK::Rise0(matHsmth.mtx2,which.ndx=which.ndx)
     }
     return(matHsmth.mtx2)
 }

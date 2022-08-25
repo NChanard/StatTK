@@ -24,13 +24,13 @@ BreakVector <- function(x.num=NULL, min.num=NULL, center.num=NULL, max.num=NULL,
         }else if(min.num<center.num & center.num<max.num ){
             breaks <- c(seq(min.num, center.num,length.out = n.num%/%2+1), seq(center.num,max.num,length.out = n.num%/%2+1))
         }else{
-            center.num <- median(x.num, na.rm=TRUE)
+            center.num <- stats::median(x.num, na.rm=TRUE)
             breaks <- c(seq(min.num, center.num,length.out = n.num%/%2+1), seq(center.num,max.num,length.out = n.num%/%2+1))
         }
     }else if(method.chr=="density"){
-        breaks <- quantile(x.num, na.rm=TRUE, probs=seq(0, 1, length.out=n.num))
+        breaks <- stats::quantile(x.num, na.rm=TRUE, probs=seq(0, 1, length.out=n.num))
     }else{
         stop("Error, method.chr muste be one of 'linear' or 'density'.\n")
     }
-    breaks %>% magrittr::extract(.,magrittr::not(duplicated(.))) %>% return
+    breaks %>% magrittr::extract(.,magrittr::not(duplicated(.))) %>% return(.)
 }

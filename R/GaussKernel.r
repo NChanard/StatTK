@@ -21,7 +21,7 @@ GaussKernel <- function(sd.num=1,kernSize.num=NULL,scale.chr=c("1"), by.num=0.01
             xInterval.num<-seq((x[col]-0.5),(x[col]+0.5),by=by.num)
             yInterval.num<-seq((y[row]-0.5),(y[row]+0.5),by=by.num)
             lapply(xInterval.num, function(xi){
-                lapply(yInterval.num,function(yj){Gauss(x=xi,y=yj,sd.num=sd.num)})}) %>% unlist %>% mean %>% return
+                lapply(yInterval.num,function(yj){Gauss(x=xi,y=yj,sd.num=sd.num)})}) %>% unlist %>% mean %>% return(.)
         })
     })
     if(scale.chr == "1" ){
