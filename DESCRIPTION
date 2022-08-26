@@ -14,7 +14,9 @@ Imports:
     magrittr,
     stats,
     utils
-Remotes: NChanard/DataTK
+Remotes: 
+    NChanard/DataTK,
+    NChanard/DevTK
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
