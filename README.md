@@ -1,5 +1,5 @@
 # StatTK
-A Tool set for statistic.  
+Set of statistical tools.
   
 ### Author  
 - Nicolas Chanard \<nicolas.chanard@univ-tlse3.fr>  
