@@ -2,14 +2,14 @@
 % Please edit documentation in R/SdThreshold.r
 \name{SdThreshold}
 \alias{SdThreshold}
-\title{SdThreshold}
+\title{Find threshold for outliers triming based on standard deviation.}
 \usage{
 SdThreshold(x.num = NULL, sdThreshold.num = 3, bounds.chr = "both")
 }
 \arguments{
-\item{x.num}{<numeric>: Numeric vector}
+\item{x.num}{<numeric>: numeric vector.}
 
-\item{sdThreshold.num}{<numeric>: number of standard deviation (Default 3)}
+\item{sdThreshold.num}{<numeric>: number of standard deviation. (Default 3)}
 
 \item{bounds.chr}{<character>: bounds to return, "lower", "upper" or "both". (Default "both")}
 }
@@ -17,7 +17,10 @@ SdThreshold(x.num = NULL, sdThreshold.num = 3, bounds.chr = "both")
 numerical vector of thresholds values for outliers triming
 }
 \description{
-Find threshold for outliers triming based on standard deviation
+Find threshold for outliers triming based on standard deviation.
+}
+\details{
+SdThreshold
 }
 \examples{
 set.seed(1111)

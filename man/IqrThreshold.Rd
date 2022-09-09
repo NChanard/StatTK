@@ -2,22 +2,25 @@
 % Please edit documentation in R/IqrThreshold.r
 \name{IqrThreshold}
 \alias{IqrThreshold}
-\title{IqrThreshold}
+\title{Find threshold for outliers triming based on inter quartile range.}
 \usage{
 IqrThreshold(x.num = NULL, iqrFactor.num = 1.5, bounds.chr = "both")
 }
 \arguments{
-\item{x.num}{<numeric>: Numeric vector}
+\item{x.num}{<numeric>: numeric vector.}
 
-\item{iqrFactor.num}{<numeric>: inter quartile range factor (Default 1.5)}
+\item{iqrFactor.num}{<numeric>: inter quartile range factor. (Default 1.5)}
 
 \item{bounds.chr}{<character>: bounds to return, "lower", "upper" or "both". (Default "both")}
 }
 \value{
-numerical vector of thresholds values for outliers triming
+numerical vector of minmal and/or maximal thresholds values for outliers triming.
 }
 \description{
 Find threshold for outliers triming based on inter quartile range.
+}
+\details{
+IqrThreshold
 }
 \examples{
 set.seed(1111)

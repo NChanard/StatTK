@@ -1,20 +1,19 @@
-#' InterpolateNA
+#' Interpolate NA values in a vector.
 #'
-#' Interpolation of NA in a linear or spline way.
-#' @param x.num <numeric>: numerical vector with NA
+#' InterpolateNA
+#' @description Interpolation of NA in a linear or spline way.
+#' @param x.num <numeric>: numerical vector with NA.
 #' @param method.chr <character>: Kind of interpolation "linear" or "spline". (Default "spline")
-#' @param ... <...>: suplemantary parameters for smooth.spline function
-#' @return ...
+#' @param ... <...>: suplemantary parameters for smooth.spline function.
+#' @return a numerical vector.
 #' @examples
 #' set.seed(20071)
 #' n <- 100
 #' y.num <- sin(seq(0, 5*pi, length.out = n)) + rnorm(n=n, mean = 0, sd=0.1)
 #' y.num[sample(1:n,round(0.5*n))] <- NA
-#' pdf(paste0(getwd(),"/Rplots.pdf"))
-#'     plot(y.num)
-#'     plot(InterpolateNA(y.num,"spline"))
-#'     plot(InterpolateNA(y.num,"linear"))
-#' dev.off()
+#' plot(y.num)
+#' plot(InterpolateNA(y.num,"spline"))
+#' plot(InterpolateNA(y.num,"linear"))
 InterpolateNA <- function(x.num, method.chr="spline",...){
     if(method.chr == "spline"){
         smoo <- stats::smooth.spline(seq_along(x.num)[!is.na(x.num)],x.num[!is.na(x.num)],...)

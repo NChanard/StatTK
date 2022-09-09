@@ -2,22 +2,25 @@
 % Please edit documentation in R/QtlThreshold.r
 \name{QtlThreshold}
 \alias{QtlThreshold}
-\title{QtlThreshold}
+\title{Find threshold for outliers triming based on quantiles.}
 \usage{
 QtlThreshold(x.num = NULL, prct.num = 5, bounds.chr = "both")
 }
 \arguments{
-\item{x.num}{<numeric>: Numeric vector}
+\item{x.num}{<numeric>: numeric vector.}
 
-\item{prct.num}{<numeric>: Percentage (0-100) threshold (Default 5)}
+\item{prct.num}{<numeric>: percentage (0-100) threshold. (Default 5)}
 
 \item{bounds.chr}{<character>: bounds to return, "lower", "upper" or "both". (Default "both")}
 }
 \value{
-numerical vector of thresholds values for outliers triming
+numerical vector of thresholds values for outliers triming.
 }
 \description{
 Find threshold for outliers triming based on quantiles.
+}
+\details{
+QtlThreshold
 }
 \examples{
 set.seed(1111)

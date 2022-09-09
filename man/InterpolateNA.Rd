@@ -2,31 +2,32 @@
 % Please edit documentation in R/InterpolateNA.r
 \name{InterpolateNA}
 \alias{InterpolateNA}
-\title{InterpolateNA}
+\title{Interpolate NA values in a vector.}
 \usage{
 InterpolateNA(x.num, method.chr = "spline", ...)
 }
 \arguments{
-\item{x.num}{<numeric>: numerical vector with NA}
+\item{x.num}{<numeric>: numerical vector with NA.}
 
 \item{method.chr}{<character>: Kind of interpolation "linear" or "spline". (Default "spline")}
 
-\item{...}{<...>: suplemantary parameters for smooth.spline function}
+\item{...}{<...>: suplemantary parameters for smooth.spline function.}
 }
 \value{
-...
+a numerical vector.
 }
 \description{
 Interpolation of NA in a linear or spline way.
+}
+\details{
+InterpolateNA
 }
 \examples{
 set.seed(20071)
 n <- 100
 y.num <- sin(seq(0, 5*pi, length.out = n)) + rnorm(n=n, mean = 0, sd=0.1)
 y.num[sample(1:n,round(0.5*n))] <- NA
-pdf(paste0(getwd(),"/Rplots.pdf"))
-    plot(y.num)
-    plot(InterpolateNA(y.num,"spline"))
-    plot(InterpolateNA(y.num,"linear"))
-dev.off()
+plot(y.num)
+plot(InterpolateNA(y.num,"spline"))
+plot(InterpolateNA(y.num,"linear"))
 }

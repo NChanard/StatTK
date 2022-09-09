@@ -1,13 +1,14 @@
-#' BreakVector
+#' Cut a vector.
 #'
-#' Compute the n+1 breaks of a vector in a linear or density based way with the possibility to fix minimal, center and maxiaml values.
-#' @param x.num <numeric>: numerical vector
-#' @param min.num <numeric>: minimal fixed value
-#' @param center.num <numeric>: center fixed value
-#' @param max.num <numeric>: maximal fixed value
-#' @param n.num <numeric>: number of tile (n.num+1 breaks return)
+#' BreakVector
+#' @description Compute the n+1 breaks of a vector in a linear or density based way with the possibility to fix minimal, center and maximal values.
+#' @param x.num <numeric>: numerical vector.
+#' @param min.num <numeric>: minimal fixed value.
+#' @param center.num <numeric>: center fixed value.
+#' @param max.num <numeric>: maximal fixed value.
+#' @param n.num <numeric>: number of tile (return n.num+1 breaks).
 #' @param method.chr <character>: kind of breaking. "linear" or "density". (Default "linear")
-#' @return Numerical vector of breaks
+#' @return Numerical vector of breaks.
 #' @examples
 #' set.seed(31415)
 #' x.num <- rnorm(100,50,200)
@@ -32,5 +33,5 @@ BreakVector <- function(x.num=NULL, min.num=NULL, center.num=NULL, max.num=NULL,
     }else{
         stop("Error, method.chr muste be one of 'linear' or 'density'.\n")
     }
-    breaks %>% magrittr::extract(.,magrittr::not(duplicated(.))) %>% return(.)
+    breaks %>% magrittr::extract(magrittr::not(duplicated(breaks))) %>% return(.data)
 }

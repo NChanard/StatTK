@@ -1,8 +1,9 @@
-#' SdThreshold
+#' Find threshold for outliers triming based on standard deviation.
 #'
-#' Find threshold for outliers triming based on standard deviation
-#' @param x.num <numeric>: Numeric vector
-#' @param sdThreshold.num <numeric>: number of standard deviation (Default 3)
+#' SdThreshold
+#' @description Find threshold for outliers triming based on standard deviation.
+#' @param x.num <numeric>: numeric vector.
+#' @param sdThreshold.num <numeric>: number of standard deviation. (Default 3)
 #' @param bounds.chr <character>: bounds to return, "lower", "upper" or "both". (Default "both")
 #' @return numerical vector of thresholds values for outliers triming
 #' @examples
@@ -23,5 +24,5 @@ SdThreshold <- function(x.num=NULL, sdThreshold.num=3, bounds.chr="both"){
         bounds.chr =="both" ~ c(lower.num,upper.num),
         bounds.chr =="upper" ~ c(NA,upper.num),
         bounds.chr =="lower" ~ c(lower.num,NA)
-    ) %>% return(.)
+    ) %>% return(.data)
 }

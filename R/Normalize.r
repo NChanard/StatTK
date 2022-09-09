@@ -1,16 +1,15 @@
-#' Normalize
+#' Normalize data.
 #'
-#' Normalize data by with square root, cubic root or log2 based on minimal skewness
-#' @param x.num <numeric>: Numerical vector
-#' @param a.num <numeric>: Constant value to add before compute normalisation too avoid negativ number. If null auto dertermine a.num. (Default NULL)
+#' Normalize
+#' @description Normalize data by with square root, cubic root or log2 based on minimal skewness.
+#' @param x.num <numeric>: numerical vector
+#' @param a.num <numeric>: constant value to add before compute normalisation too avoid negativ number. If null auto dertermine a.num. (Default NULL)
 #' @return Normalized vector
 #' @examples
 #' set.seed(542972)
 #' x.num <- rnbinom(1000, 1, 0.01)
-#' pdf(file=paste0(getwd(),"/Rplots.pdf"))
-#'     plot(density(x.num))
-#'     plot(density(Normalize(x.num)))
-#' dev.off()
+#' plot(density(x.num))
+#' plot(density(Normalize(x.num)))
 Normalize <- function(x.num=NULL, a.num=NULL){
     if(is.null(a.num)){
         if(min(x.num)>0){
@@ -26,5 +25,7 @@ Normalize <- function(x.num=NULL, a.num=NULL){
         "CbrtNorm"=MedianSkewness(CbrtNorm(x.num,a.num)),
         "Log2Norm"=MedianSkewness(Log2Norm(x.num,a.num))
     ) %>% abs %>% which.min %>% names 
-    normMethod.chr %>% {eval(parse(text=.))(x.num,a.num)} %>% DevTK::AddAttr(., attribute.lst=list(norm=normMethod.chr), overwrite.bln=TRUE) %>% return(.)
+    eval(parse(text=normMethod.chr))(x.num,a.num) %>%
+    DevTK::AddAttr(attribute.lst=list(norm=normMethod.chr), overwrite.bln=TRUE) %>%
+    return(.data)
 }

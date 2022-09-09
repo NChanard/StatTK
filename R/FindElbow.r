@@ -1,18 +1,18 @@
-#' FindElbow
+#' Find the elbow point on a curve.
 #'
-#' Find elbow point
+#' FindElbow
+#' @description Find the elbow point on a curve.
 #' @param x.num <numeric>: numeric vector of x coordinates of the curve.
 #' @param y.num <numeric>: numeric vector of y coordiantes of the curve.
-#' @return Numeric vector of elbow coordinates
+#' @return Numeric vector of elbow coordinates.
 #' @examples
 #' x.num = 1:10
 #' y.num = 1/sqrt(x.num)
 #' elbow = FindElbow(x.num, y.num)
 #' elbow
-#' pdf(file=paste0(getwd(),"/Rplot.pdf"))
-#'     plot(y.num~x.num,type='l')
-#'     points(x=elbow[1],y=elbow[2])
-#' dev.off()
+#' plot(y.num~x.num,type='l')
+#' points(x=elbow[1],y=elbow[2])
+
 FindElbow <- function(x.num, y.num) {
     # Max values to create line
         xMax.num <- max(x.num)

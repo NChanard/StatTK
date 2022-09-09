@@ -2,36 +2,33 @@
 % Please edit documentation in R/MinMaxScale.r
 \name{MinMaxScale}
 \alias{MinMaxScale}
-\title{MinMaxScale}
+\title{Scales values on min-max range.}
 \usage{
 MinMaxScale(x.num, min.num = (0), max.num = 1)
 }
 \arguments{
-\item{x.num}{<numeric>: Numerical vector}
+\item{x.num}{<numeric>: numerical vector.}
 
-\item{min.num}{<numeric>: Minimal value after scaling}
+\item{min.num}{<numeric>: minimal value after scaling.}
 
-\item{max.num}{<numeric>: Maximal value after scaling}
+\item{max.num}{<numeric>: maximal value after scaling.}
 }
 \value{
-Scaled numeric vector
+scaled numeric vector.
 }
 \description{
-Scale values on min max bounds.
+Scale values on min-max range.
+}
+\details{
+MinMaxScale
 }
 \examples{
 set.seed(655213)
 x.num <- rnorm(500,500)
 set.seed(522613)
 y.num <- rnorm(500,100)
-pdf(file=paste0(getwd(),"/Rplots.pdf"))
-    plot(density(x.num),col="red",xlim=c(min(y.num),max(x.num )))
-    lines(density(y.num),col="green")
-    plot(
-           density(MinMaxScale(x.num)),
-           col="red",
-           xlim=c(min(MinMaxScale(y.num)),max(MinMaxScale(x.num)))
-    )
-    lines(density(MinMaxScale(y.num)),col="green")
-dev.off()
+plot(density(x.num),col="red",xlim=c(min(y.num),max(x.num )))
+lines(density(y.num),col="green")
+plot(density(MinMaxScale(x.num)),col="red",xlim=c(min(MinMaxScale(y.num)),max(MinMaxScale(x.num))))
+lines(density(MinMaxScale(y.num)),col="green")
 }

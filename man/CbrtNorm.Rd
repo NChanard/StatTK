@@ -2,26 +2,27 @@
 % Please edit documentation in R/CbrtNorm.r
 \name{CbrtNorm}
 \alias{CbrtNorm}
-\title{CbrtNorm}
+\title{Cubic root normalization.}
 \usage{
 CbrtNorm(x.num, a.num = 0)
 }
 \arguments{
-\item{x.num}{<numeric>: Numerical vector}
+\item{x.num}{<numeric>: numerical vector.}
 
-\item{a.num}{<numeric>: Constant value to add before compute cubic root (Default 0)}
+\item{a.num}{<numeric>: constant value to add before compute cubic root. (Default 0)}
 }
 \value{
-Normalized vector
+normalized vector.
 }
 \description{
-Normalize data by cubic root and adding a constant value
+Normalize data by cubic root and adding a constant value.
+}
+\details{
+CbrtNorm
 }
 \examples{
 set.seed(542972)
 x.num <- rnbinom(1000, 1, 0.01)
-pdf(file=paste0(getwd(),"/Rplots.pdf"))
-    plot(density(x.num))
-    plot(density(CbrtNorm(x.num, abs(min(x.num)))))
-dev.off()
+plot(density(x.num))
+plot(density(CbrtNorm(x.num, abs(min(x.num)))))
 }

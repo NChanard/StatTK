@@ -12,12 +12,17 @@ Imports:
     DevTK,
     dplyr,
     magrittr,
+    rlang,
     stats,
     utils
+Suggests:
+    knitr,
+    rmarkdown
 Remotes: 
     NChanard/DataTK,
     NChanard/DevTK
 License: MIT + file LICENSE
+VignetteBuilder: knitr
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.2.0
+RoxygenNote: 7.2.1

@@ -2,30 +2,31 @@
 % Please edit documentation in R/BoxBlur.r
 \name{BoxBlur}
 \alias{BoxBlur}
-\title{BoxBlur}
+\title{Blur a matrix.}
 \usage{
 BoxBlur(mat.mtx, box.num = NULL, boxSize.num = NULL, sd.num = 1)
 }
 \arguments{
-\item{mat.mtx}{<matrix>: Numerical matrix}
+\item{mat.mtx}{<matrix>: numerical matrix.}
 
-\item{box.num}{<numeric>: the numerical vector for kernel. If Null apply a GaussBox (see 'GaussBox' function)}
+\item{box.num}{<numeric>: the numerical vector for kernel. If NULL apply a GaussBox (see 'GaussBox' function) (Default NULL)}
 
-\item{boxSize.num}{<numeric>: If box.num is NULL, size of kernel for 'GaussBox' function.}
+\item{boxSize.num}{<numeric>: if box.num is NULL, size of kernel for 'GaussBox' function. (Default NULL)}
 
-\item{sd.num}{<numeric>: If box.num is NULL,  standard deviation parameter for 'GaussBox' function.}
+\item{sd.num}{<numeric>: if box.num is NULL,  standard deviation parameter for 'GaussBox' function. (Default NULL)}
 }
 \value{
-Blurred matrix
+Blurred matrix.
 }
 \description{
-Apply a blur on matrix with a One dimensional kernel
+Blur a matrix with a one dimensional kernel.
+}
+\details{
+BoxBlur
 }
 \examples{
 set.seed(981643)
 mat.mtx <- rnorm(10000,50,10)**3 \%>\% matrix(.,100,100)
-pdf(file=paste0(getwd(),"/Rplots.pdf"))
 heatmap(mat.mtx,Rowv=NA,Colv=NA)
 heatmap(BoxBlur(mat.mtx),Rowv=NA,Colv=NA)
-dev.off()
 }

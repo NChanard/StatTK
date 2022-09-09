@@ -2,24 +2,27 @@
 % Please edit documentation in R/GaussKernel.r
 \name{GaussKernel}
 \alias{GaussKernel}
-\title{GaussKernel}
+\title{Two dimension Gaussian kernel.}
 \usage{
 GaussKernel(sd.num = 1, kernSize.num = NULL, scale.chr = c("1"), by.num = 0.01)
 }
 \arguments{
-\item{sd.num}{<numeric>: standard deviation parameter of the gaussian (Default 1)}
+\item{sd.num}{<numeric>: standard deviation parameter of the gaussian. (Default 1)}
 
-\item{kernSize.num}{<numeric>: size of kernel. If null size is 1+4*sd.num}
+\item{kernSize.num}{<numeric>: size of kernel. If null size is 1+4*sd.num. (Default NULL)}
 
-\item{scale.chr}{<character>: scaling kind of box. If "1" sum of kernel equal 1. If "int" Minimal value of kernel is 1 and all entry are integer. If "none", kernel is not scale (Default "1")}
+\item{scale.chr}{<character>: scaling kind of box. If "1" sum of kernel equal 1. If "int" Minimal value of kernel is 1 and all entry are integer. If "none", kernel is not scale. (Default "1")}
 
-\item{by.num}{<numerical>: Step size for compute Gaussian function in two dimension (Default =0.01)}
+\item{by.num}{<numerical>: step size for compute Gaussian function in two dimension (Default 0.01).}
 }
 \value{
-Numerical matrix
+numerical matrix.
 }
 \description{
-Two dimension Gaussian kernel
+Two dimension Gaussian kernel.
+}
+\details{
+GaussKernel
 }
 \examples{
 GaussKernel(scale.chr=c("none"))

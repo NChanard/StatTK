@@ -2,28 +2,29 @@
 % Please edit documentation in R/MeanScale.r
 \name{MeanScale}
 \alias{MeanScale}
-\title{MeanScale}
+\title{Scale values by mean.}
 \usage{
 MeanScale(x.num)
 }
 \arguments{
-\item{x.num}{<numeric>: Numerical vector}
+\item{x.num}{<numeric>: numerical vector.}
 }
 \value{
-Scaled numeric vector
+scaled numeric vector.
 }
 \description{
 Scale values with mean.
+}
+\details{
+MeanScale
 }
 \examples{
 set.seed(655213)
 x.num <- rnorm(500,500)
 set.seed(522613)
 y.num <- rnorm(500,100)
-pdf(file=paste0(getwd(),"/Rplots.pdf"))
-    plot(density(x.num),col="red",xlim=c(min(y.num),max(x.num )))
-    lines(density(y.num),col="green")
-    plot(density(MeanScale(x.num)),col="red",xlim=c(min(MeanScale(y.num)),max(MeanScale(x.num) )))
-    lines(density(MeanScale(y.num)),col="green")
-dev.off()
+plot(density(x.num),col="red",xlim=c(min(y.num),max(x.num )))
+lines(density(y.num),col="green")
+plot(density(MeanScale(x.num)),col="red",xlim=c(min(MeanScale(y.num)),max(MeanScale(x.num) )))
+lines(density(MeanScale(y.num)),col="green")
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/BreakVector.r
 \name{BreakVector}
 \alias{BreakVector}
-\title{BreakVector}
+\title{Cut a vector.}
 \usage{
 BreakVector(
   x.num = NULL,
@@ -14,23 +14,26 @@ BreakVector(
 )
 }
 \arguments{
-\item{x.num}{<numeric>: numerical vector}
+\item{x.num}{<numeric>: numerical vector.}
 
-\item{min.num}{<numeric>: minimal fixed value}
+\item{min.num}{<numeric>: minimal fixed value.}
 
-\item{center.num}{<numeric>: center fixed value}
+\item{center.num}{<numeric>: center fixed value.}
 
-\item{max.num}{<numeric>: maximal fixed value}
+\item{max.num}{<numeric>: maximal fixed value.}
 
-\item{n.num}{<numeric>: number of tile (n.num+1 breaks return)}
+\item{n.num}{<numeric>: number of tile (return n.num+1 breaks).}
 
 \item{method.chr}{<character>: kind of breaking. "linear" or "density". (Default "linear")}
 }
 \value{
-Numerical vector of breaks
+Numerical vector of breaks.
 }
 \description{
-Compute the n+1 breaks of a vector in a linear or density based way with the possibility to fix minimal, center and maxiaml values.
+Compute the n+1 breaks of a vector in a linear or density based way with the possibility to fix minimal, center and maximal values.
+}
+\details{
+BreakVector
 }
 \examples{
 set.seed(31415)

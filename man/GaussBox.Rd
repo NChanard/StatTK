@@ -2,22 +2,25 @@
 % Please edit documentation in R/GaussBox.r
 \name{GaussBox}
 \alias{GaussBox}
-\title{GaussBox}
+\title{One dimension Gaussian kernel.}
 \usage{
 GaussBox(sd.num = 1, boxSize.num = NULL, scale.chr = "1")
 }
 \arguments{
-\item{sd.num}{<numeric>: standard deviation parameter of the gaussian (Default 1)}
+\item{sd.num}{<numeric>: standard deviation parameter of the gaussian. (Default 1)}
 
-\item{boxSize.num}{<numeric>: size of kernel. If null size is 1+4*sd.num}
+\item{boxSize.num}{<numeric>: size of kernel. If NULL size is 1+4*sd.num (Default NULL)}
 
-\item{scale.chr}{<character>: scaling kind of box. If "1" sum of kernel equal 1. If "int" Minimal value of kernel is 1 and all entry are integer. If "none", kernel is not scale (Default "1")}
+\item{scale.chr}{<character>: scaling kind of box. If "1" sum of kernel equal 1. If "int" Minimal value of kernel is 1 and all entry are integer. If "none", kernel is not scale. (Default "1")}
 }
 \value{
-Numerical vector
+numerical vector.
 }
 \description{
-One dimension Gaussian kernel
+One dimension Gaussian kernel.
+}
+\details{
+GaussBox
 }
 \examples{
 GaussBox( scale.chr="none")

@@ -1,0 +1,33 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# StatTK <a href='https://nchanard.github.io/StatTK/'><img src='man/figures/logo.png' align="right" /></a>
+
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/NChanard/StatToolKit/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/NChanard/StatToolKit/actions/workflows/R-CMD-check.yaml)
+<!-- badges: end -->
+
+StatTK is a set of statistical tools.
+
+## Installation
+
+You can install the development version of StatTK from [GitHub](https://github.com/) with:
+
+``` r
+devtools::install_github("NChanard/StatToolKit")
+```
+## Documentation  
+
+[StatTK](https://nchanard.github.io/StatTK/)

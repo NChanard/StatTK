@@ -2,24 +2,27 @@
 % Please edit documentation in R/Gauss.r
 \name{Gauss}
 \alias{Gauss}
-\title{Gauss}
+\title{Gaussian formula.}
 \usage{
 Gauss(x = NULL, y = NULL, sd.num = 1, mu = 0)
 }
 \arguments{
-\item{x}{<numeric>: x value}
+\item{x}{<numeric>: x value.}
 
-\item{y}{<numeric>: y value for 2 dimensional gaussian}
+\item{y}{<numeric>: y value for 2 dimensional gaussian.}
 
-\item{sd.num}{<numeric>: standard deviation parameter of the gaussian (Default 1)}
+\item{sd.num}{<numeric>: standard deviation parameter of the gaussian. (Default 1)}
 
-\item{mu}{<numeric>:  mean deviation parameter of the gaussian (Default 0)}
+\item{mu}{<numeric>:  mean deviation parameter of the gaussian. (Default 0)}
 }
 \value{
 Result of Gaussian formula
 }
 \description{
-Gaussian formula in 1 or 2 dimension
+Gaussian formula in 1 or 2 dimension.
+}
+\details{
+Gauss
 }
 \examples{
 Gauss(x=1)

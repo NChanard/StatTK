@@ -2,26 +2,27 @@
 % Please edit documentation in R/Normalize.r
 \name{Normalize}
 \alias{Normalize}
-\title{Normalize}
+\title{Normalize data.}
 \usage{
 Normalize(x.num = NULL, a.num = NULL)
 }
 \arguments{
-\item{x.num}{<numeric>: Numerical vector}
+\item{x.num}{<numeric>: numerical vector}
 
-\item{a.num}{<numeric>: Constant value to add before compute normalisation too avoid negativ number. If null auto dertermine a.num. (Default NULL)}
+\item{a.num}{<numeric>: constant value to add before compute normalisation too avoid negativ number. If null auto dertermine a.num. (Default NULL)}
 }
 \value{
 Normalized vector
 }
 \description{
-Normalize data by with square root, cubic root or log2 based on minimal skewness
+Normalize data by with square root, cubic root or log2 based on minimal skewness.
+}
+\details{
+Normalize
 }
 \examples{
 set.seed(542972)
 x.num <- rnbinom(1000, 1, 0.01)
-pdf(file=paste0(getwd(),"/Rplots.pdf"))
-    plot(density(x.num))
-    plot(density(Normalize(x.num)))
-dev.off()
+plot(density(x.num))
+plot(density(Normalize(x.num)))
 }

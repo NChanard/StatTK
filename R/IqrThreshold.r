@@ -1,10 +1,11 @@
-#' IqrThreshold
-#'
 #' Find threshold for outliers triming based on inter quartile range.
-#' @param x.num <numeric>: Numeric vector
-#' @param iqrFactor.num <numeric>: inter quartile range factor (Default 1.5)
+#'
+#' IqrThreshold
+#' @description Find threshold for outliers triming based on inter quartile range.
+#' @param x.num <numeric>: numeric vector.
+#' @param iqrFactor.num <numeric>: inter quartile range factor. (Default 1.5)
 #' @param bounds.chr <character>: bounds to return, "lower", "upper" or "both". (Default "both")
-#' @return numerical vector of thresholds values for outliers triming
+#' @return numerical vector of minmal and/or maximal thresholds values for outliers triming.
 #' @examples
 #' set.seed(1111)
 #' x.num <- rnorm(1000)
@@ -24,5 +25,5 @@ IqrThreshold <- function(x.num=NULL, iqrFactor.num=1.5, bounds.chr="both"){
         bounds.chr =="both" ~ c(lower.num,upper.num),
         bounds.chr =="upper" ~ c(NA,upper.num),
         bounds.chr =="lower" ~ c(lower.num,NA)
-    ) %>% return(.)
+    ) %>% return(.data)
 }

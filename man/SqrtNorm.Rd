@@ -2,26 +2,27 @@
 % Please edit documentation in R/SqrtNorm.r
 \name{SqrtNorm}
 \alias{SqrtNorm}
-\title{SqrtNorm}
+\title{Square root normalization.}
 \usage{
 SqrtNorm(x.num, a.num = 0)
 }
 \arguments{
-\item{x.num}{<numeric>: Numerical vector}
+\item{x.num}{<numeric>: Numerical vector.}
 
-\item{a.num}{<numeric>: Constant value to add before compute square root (Default 0)}
+\item{a.num}{<numeric>: Constant value to add before compute square root. (Default 0)}
 }
 \value{
-Normalized vector
+Normalized vector.
 }
 \description{
-Normalize data by square root and adding a constant value
+Normalize data by square root and adding a constant value.
+}
+\details{
+SqrtNorm.
 }
 \examples{
 set.seed(542972)
 x.num <- rnbinom(1000, 1, 0.01)
-pdf(file=paste0(getwd(),"/Rplots.pdf"))
-    plot(density(x.num))
-    plot(density(SqrtNorm(x.num, abs(min(x.num)))))
-dev.off()
+plot(density(x.num))
+plot(density(SqrtNorm(x.num, abs(min(x.num)))))
 }

@@ -2,18 +2,21 @@
 % Please edit documentation in R/MedianSkewness.r
 \name{MedianSkewness}
 \alias{MedianSkewness}
-\title{MedianSkewness}
+\title{Pearson median skewness.}
 \usage{
 MedianSkewness(x.num)
 }
 \arguments{
-\item{x.num}{<numeric>: Numerical vector}
+\item{x.num}{<numeric>: numerical vector.}
 }
 \value{
-Skewness value
+skewness value.
 }
 \description{
-Pearson Median Skewness
+Pearson median skewness.
+}
+\details{
+MedianSkewness
 }
 \examples{
 set.seed(542972)

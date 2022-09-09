@@ -1,0 +1,46 @@
+template:
+  bootstrap: 5
+
+reference:
+- title: Scaling
+  contents:
+  - MeanScale
+  - MinMaxScale
+  - RobustScalarScale
+  - UnitLengthScale
+
+- title: Normalization
+  contents:
+  - CbrtNorm
+  - Log2Norm
+  - Normalize
+  - SqrtNorm
+
+- title: Outliers
+  contents:
+  - IqrThreshold
+  - QtlThreshold
+  - SdThreshold
+  - TrimOutliers
+
+- title: Gaussian
+  contents:
+  - Gauss
+  - GaussBox
+  - GaussKernel
+
+- title: Other
+  contents:
+  - BoxBlur
+  - BreakVector
+  - FindElbow
+  - InterpolateNA
+  - MedianSkewness
+
+
+articles:
+- title: Other
+  navbar: ~
+  contents:
+  - Standard  
+

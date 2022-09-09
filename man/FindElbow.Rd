@@ -2,7 +2,7 @@
 % Please edit documentation in R/FindElbow.r
 \name{FindElbow}
 \alias{FindElbow}
-\title{FindElbow}
+\title{Find the elbow point on a curve.}
 \usage{
 FindElbow(x.num, y.num)
 }
@@ -12,18 +12,19 @@ FindElbow(x.num, y.num)
 \item{y.num}{<numeric>: numeric vector of y coordiantes of the curve.}
 }
 \value{
-Numeric vector of elbow coordinates
+Numeric vector of elbow coordinates.
 }
 \description{
-Find elbow point
+Find the elbow point on a curve.
+}
+\details{
+FindElbow
 }
 \examples{
 x.num = 1:10
 y.num = 1/sqrt(x.num)
 elbow = FindElbow(x.num, y.num)
 elbow
-pdf(file=paste0(getwd(),"/Rplot.pdf"))
-    plot(y.num~x.num,type='l')
-    points(x=elbow[1],y=elbow[2])
-dev.off()
+plot(y.num~x.num,type='l')
+points(x=elbow[1],y=elbow[2])
 }

@@ -1,10 +1,11 @@
-#' QtlThreshold
+#' Find threshold for outliers triming based on quantiles.
 #'
-#'  Find threshold for outliers triming based on quantiles.
-#' @param x.num <numeric>: Numeric vector
-#' @param prct.num <numeric>: Percentage (0-100) threshold (Default 5)
+#' QtlThreshold
+#' @description Find threshold for outliers triming based on quantiles.
+#' @param x.num <numeric>: numeric vector.
+#' @param prct.num <numeric>: percentage (0-100) threshold. (Default 5)
 #' @param bounds.chr <character>: bounds to return, "lower", "upper" or "both". (Default "both")
-#' @return numerical vector of thresholds values for outliers triming
+#' @return numerical vector of thresholds values for outliers triming.
 #' @examples
 #' set.seed(1111)
 #' x.num <- 0:100
@@ -15,9 +16,10 @@
 #' QtlThreshold(x.num, prct.num=5, bounds.chr="upper")
 
 QtlThreshold <- function(x.num=NULL, prct.num=5, bounds.chr="both"){
-    dplyr::case_when(
+    probs.num <- dplyr::case_when(
         bounds.chr =="both" ~ c(prct.num/200,1-(prct.num/200)),
         bounds.chr =="upper" ~ c(NA,1-(prct.num/100)),
         bounds.chr =="lower" ~ c(prct.num/100,NA)
-    ) %>% stats::quantile(x.num,na.rm=TRUE,.) %>% return(.)
+    )
+    stats::quantile(x.num,na.rm=TRUE,probs.num) %>% return(.data)
 }
