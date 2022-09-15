@@ -36,6 +36,7 @@ reference:
   - FindElbow
   - InterpolateNA
   - MedianSkewness
+  - Plus
 
 
 articles:

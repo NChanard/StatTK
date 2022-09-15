@@ -17,10 +17,10 @@ BoxBlur <- function(mat.mtx, box.num=NULL, boxSize.num=NULL, sd.num=1){
     pad.num <- (length(box.num)-1)/2
     mat.mtx <- DataTK::PadMtx(mat.mtx=mat.mtx, padSize.num=pad.num, value.num=NULL, side.chr=c('top','bot','right','left'))
     matVsmth.mtx2 <- sapply(((1+pad.num):(dim(mat.mtx)[2]-pad.num)), function(j){(t(mat.mtx[,(j-pad.num):(j+pad.num)]) * box.num) %>%
-        apply(2,DevTK::Plus)})
+        apply(2,Plus)})
         matHsmth.mtx2 <- t(sapply(((1+pad.num):(dim(matVsmth.mtx2)[1]-pad.num)), function(i){
             (matVsmth.mtx2[(i-pad.num):(i+pad.num),] * box.num) %>%
-            apply(2,DevTK::Plus) %>%
+            apply(2,Plus) %>%
             t
             }))
     which.ndx <- which(matHsmth.mtx2==0)
