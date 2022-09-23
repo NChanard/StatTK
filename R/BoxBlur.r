@@ -29,3 +29,4 @@ BoxBlur <- function(mat.mtx, box.num=NULL, boxSize.num=NULL, sd.num=1){
     }
     return(matHsmth.mtx2)
 }
+#

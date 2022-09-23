@@ -6,6 +6,8 @@
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/NChanard/StatTK/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/NChanard/StatTK/actions/workflows/R-CMD-check.yaml)
+[![Codecov test
+coverage](https://codecov.io/gh/NChanard/StatToolKit/branch/master/graph/badge.svg)](https://app.codecov.io/gh/NChanard/StatToolKit?branch=master)
 <!-- badges: end -->
 
 StatTK is a set of statistical tools.
