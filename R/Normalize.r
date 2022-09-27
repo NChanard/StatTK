@@ -24,8 +24,8 @@ Normalize <- function(x.num=NULL, a.num=NULL){
         "SqrtNorm"=MedianSkewness(SqrtNorm(x.num,a.num)),
         "CbrtNorm"=MedianSkewness(CbrtNorm(x.num,a.num)),
         "Log2Norm"=MedianSkewness(Log2Norm(x.num,a.num))
-    ) %>% abs %>% which.min %>% names 
-    eval(parse(text=normMethod.chr))(x.num,a.num) %>%
-    DevTK::AddAttr(attribute.lst=list(norm=normMethod.chr), overwrite.bln=TRUE) %>%
-    return(.data)
+    ) |> abs() |> which.min() |> names()
+    x.num <- eval(parse(text=normMethod.chr))(x.num,a.num) |>
+        DevTK::AddAttr(attribute.lst=list(norm=normMethod.chr), overwrite.bln=TRUE)
+    return(x.num)
 }

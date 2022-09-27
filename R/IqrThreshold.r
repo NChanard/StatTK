@@ -21,9 +21,10 @@ IqrThreshold <- function(x.num=NULL, iqrFactor.num=1.5, bounds.chr="both"){
     interQ.num <- Q3.num-Q1.num
     upper.num <- Q3.num+(iqrFactor.num*interQ.num)
     lower.num <- Q1.num-(iqrFactor.num*interQ.num)
-    dplyr::case_when(
+    tresholds.num <- dplyr::case_when(
         bounds.chr =="both" ~ c(lower.num,upper.num),
         bounds.chr =="upper" ~ c(NA,upper.num),
         bounds.chr =="lower" ~ c(lower.num,NA)
-    ) %>% return(.data)
+    )
+    return(tresholds.num)
 }

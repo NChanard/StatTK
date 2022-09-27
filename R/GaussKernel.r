@@ -17,18 +17,22 @@ GaussKernel <- function(sd.num=1,kernSize.num=NULL,scale.chr=c("1"), by.num=0.01
     x<-as.vector(scale(seq_len(kernSize.num),scale=FALSE,center=TRUE))
     y<-x
     
-    kern <- sapply(seq_along(x),function(col){
+    kern.num <- sapply(seq_along(x),function(col){
         sapply(seq_along(y),function(row){
             xInterval.num<-seq((x[col]-0.5),(x[col]+0.5),by=by.num)
             yInterval.num<-seq((y[row]-0.5),(y[row]+0.5),by=by.num)
-            lapply(xInterval.num, function(xi){
-                lapply(yInterval.num,function(yj){Gauss(x=xi,y=yj,sd.num=sd.num)})}) %>% unlist %>% mean %>% return(.data)
+            kern <- lapply(xInterval.num, function(xi){
+                lapply(yInterval.num,function(yj){Gauss(x=xi,y=yj,sd.num=sd.num)})
+            }) |>
+            unlist() |>
+            mean()
+            return(kern)
         })
     })
     if(scale.chr == "1" ){
-        kern  <- kern/sum(abs(kern))
+        kern.num  <- kern.num/sum(abs(kern.num))
     }else if(scale.chr == "int" ){
-        kern  <- kern/kern[1,1] %>% ceiling
+        kern.num  <- ceiling(kern.num/kern.num[1,1])
     }
-    return(kern)
+    return(kern.num)
 }

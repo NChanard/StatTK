@@ -21,5 +21,5 @@ QtlThreshold <- function(x.num=NULL, prct.num=5, bounds.chr="both"){
         bounds.chr =="upper" ~ c(NA,1-(prct.num/100)),
         bounds.chr =="lower" ~ c(prct.num/100,NA)
     )
-    stats::quantile(x.num,na.rm=TRUE,probs.num) %>% return(.data)
+    return(stats::quantile(x.num,na.rm=TRUE,probs.num))
 }

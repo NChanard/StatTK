@@ -20,9 +20,10 @@ SdThreshold <- function(x.num=NULL, sdThreshold.num=3, bounds.chr="both"){
     sdev.num <- stats::sd(x.num,na.rm=TRUE)
     upper.num <- mu.num + (sdThreshold.num*sdev.num)
     lower.num <- mu.num - (sdThreshold.num*sdev.num)
-    dplyr::case_when(
+    tresholds.num <- dplyr::case_when(
         bounds.chr =="both" ~ c(lower.num,upper.num),
         bounds.chr =="upper" ~ c(NA,upper.num),
         bounds.chr =="lower" ~ c(lower.num,NA)
-    ) %>% return(.data)
+    )
+    return(tresholds.num)
 }

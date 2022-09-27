@@ -12,8 +12,6 @@ Imports:
     DataTK,
     DevTK,
     dplyr,
-    magrittr,
-    rlang,
     stats,
     utils
 Suggests:
