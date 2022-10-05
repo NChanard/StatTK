@@ -6,6 +6,9 @@ Author: Nicolas Chanard <nicolas.chanard@univ-tlse3.fr>
 Maintainer: Nicolas Chanard <nicolas.chanard@univ-tlse3.fr>
 Description: Set of statistical tools.
 License: MIT + file LICENSE
+URL:
+    https://nchanard.github.io/StatTK/,
+    https://github.com/NChanard/StatTK
 Depends:
     R (>= 4.1)
 Imports:
