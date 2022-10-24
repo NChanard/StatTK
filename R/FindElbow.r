@@ -17,18 +17,28 @@ FindElbow <- function(x.num, y.num) {
     # Max values to create line
         xMax.num <- max(x.num)
         yxMax.num <- y.num[which.max(x.num)]
-        yMax.num <- max(y.num)
-        xyMax.num <- x.num[which.max(y.num)]
-        max.dtf <- data.frame(x = c(xyMax.num, xMax.num), y = c(yMax.num, yxMax.num))
+        xMin.num <- min(x.num)
+        yxMin.num <- y.num[which.min(x.num)]
+        max.dtf <- data.frame(x = c(xMin.num, xMax.num), y = c(yxMin.num, yxMax.num))
     # Creating straight line between the max values
         fit.lm <- stats::lm(max.dtf$y ~ max.dtf$x)
     # Distance from point to line
-        distances.num <- c()
-        for(i in seq_along(x.num)) {
-            distances.num <- c(distances.num, abs(stats::coef(fit.lm)[2]*x.num[i] - y.num[i] + stats::coef(fit.lm)[1]) / sqrt(stats::coef(fit.lm)[2]^2 + 1^2))
+        a = stats::coef(fit.lm)[2]
+        angle_pente = 90-tan(a) * pi /180
+        b = stats::coef(fit.lm)[1]
+        i = 1
+        max_delta = -Inf
+        while(i <= length(x.num)){
+            vertical_distances.num = abs(a*x.num[i]+b - y.num[i])
+            perpendicular_distance.num = sin(angle_pente)*vertical_distances.num
+            delta = vertical_distances.num - perpendicular_distance.num
+            if(delta>max_delta){
+                max_delta <- delta
+                i_max <- i
+            }else if (i_max+3<= i ){
+                return(c(x.num[which.max(i_max)], y.num[which.max(i_max)]))
+            }
+            i <- i+1
         }
-    # Max distance point
-        xMaxDist <- x.num[which.max(distances.num)]
-        yMaxDist <- y.num[which.max(distances.num)]
-        return(c(xMaxDist, yMaxDist))
+        return(NULL)        
 }

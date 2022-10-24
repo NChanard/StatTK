@@ -28,7 +28,7 @@ StatTK is a set of statistical tools.
 You can install the development version of StatTK from [GitHub](https://github.com/) with:
 
 ``` r
-devtools::install_github("NChanard/StatTK")
+remotes::install_github("NChanard/StatTK")
 ```
 ## Documentation  
 
